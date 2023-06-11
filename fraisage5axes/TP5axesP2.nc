@@ -23,15 +23,34 @@ G01 G40 X-44. ; (J)
 
 (SURFACAGE1)
 G01 Z30.; (Remonte)
-G00 G40 X44. Y-35.; (E)
+G40 G00 X44. Y-35.; (E)
 G01 H16 Z19. ; (hauteur usinage)
 G01 X-44.;(F)
 G01 Y-50.;(G)
 G01 X44.;(H)
-G01 Y-25;(I)
+G01 Y-25.;(L)
+G01 X-44.;(M)
 
+(POINTAGE)
 G01 Z30.; (Remonte)
 G00 Z150.; (Remonte rapide)
-T2 D8 
+T2 D8;
+S9500;   !!!
+G40 G00 X0. Y-28. ; (C)
+G00 Z30.; (plan securite)
+G01 F96 Z17.; (profondeur pointage) !!!
+G01 Z30.; (plan securite)
+G00 Z150.; (Remonte rapide)
+
+(PERCAGE)
+T5 D6; ???
+S3000;
+G40 G00 X0. Y-28. ; (C)
+G01 F6 Z14.; (percage)
+G01 Z30.; (Remonte)
+G00 Z150.; (Remonte rapide)
+
+
+
 N380 M30
 %
