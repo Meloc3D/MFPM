@@ -10,54 +10,55 @@ N90 T16 D16 M06 (Appel Outil)
 N100 G00 G90 G94 G17 G40 G49 G56 (Demarrage sur) ;
 N110 S3000 M03 (Broche activee en SH) ;
 N120 G00 G43 H16 Z150. (Deplacement rapide vers la 1ere position) ;
-N130 G00 X44. Y-28.(I) ; 
-N140 G0 Z30. ; (plan securite)
+N130 G00 A90
+N140 G00 X44. Y-28.(I) ; 
+N150 G0 Z30. ; (plan securite)
 
 (DEBUT DES BLOCS D'USINAGE)
 
-N180 M97 P260 L1;
-N190 B62; (retournement)
-N200 G00 X44. Y-28.(I) ; 
-N210 G0 Z30. ; (plan securite)
-N220 M97 P260 L1;
+N190 M97 P270 L1;
+N200 G00 B62; (retournement)
+N210 G00 X44. Y-28.(I) ; 
+N220 G0 Z30. ; (plan securite)
+N230 M97 P260 L1;
 
 
 (CONTOURNAGE1)
-N260 G01 F0.15 Z14.; (I) !!!!
-N270 G90 G41 G01 X.9.; (A)
-N280 G02 X-9. Y-28. R9. ; (B)
-N290 G01 G40 X-44. ; (J)
+N270 G01 F0.15 Z14.; (I) !!!!
+N280 G90 G41 G01 X.9.; (A)
+N290 G02 X-9. Y-28. R9. ; (B)
+N300 G01 G40 X-44. ; (J)
 
 (SURFACAGE1)
-N320 G01 Z30.; (Remonte)
-N330 G40 G00 X44. Y-35.; (E)
-N340 G01 H16 Z19. ; (hauteur usinage)
-N350 G01 X-44.;(F)
-N360 G01 Y-50.;(G)
-N370 G01 X44.;(H)
-N380 G01 Y-25.;(L)
-N390 G01 X-44.;(M)
+N330 G01 Z30.; (Remonte)
+N340 G40 G00 X44. Y-35.; (E)
+N350 G01 H16 Z19. ; (hauteur usinage)
+N360 G01 X-44.;(F)
+N370 G01 Y-50.;(G)
+N380 G01 X44.;(H)
+N390 G01 Y-25.;(L)
+N400 G01 X-44.;(M)
 
 (POINTAGE)
-N420 G01 Z30.; (Remonte)
-N430 G00 Z150.; (Remonte rapide)
-N440 T2 D8;
-N450 S9500;   !!!
-N460 G40 G00 X0. Y-28. ; (C)
-N470 G00 Z30.; (plan securite)
-N480 G01 F96 Z17.; (profondeur pointage) !!!
-N490 G01 Z30.; (plan securite)
-N500 G00 Z150.; (Remonte rapide)
+N430 G01 Z30.; (Remonte)
+N440 G00 Z150.; (Remonte rapide)
+N450 T2 D8;
+N460 S9500;   !!!
+N470 G40 G00 X0. Y-28. ; (C)
+N480 G00 Z30.; (plan securite)
+N490 G01 F96 Z17.; (profondeur pointage) !!!
+N500 G01 Z30.; (plan securite)
+N510 G00 Z150.; (Remonte rapide)
 
 (PERCAGE)
-N530 T5 D6; ???
-N540 S3000;
-N550 G40 G00 X0. Y-28. ; (C)
-N560 G01 F6 Z14.; (percage)
-N570 G01 Z30.; (Remonte)
-N580 G00 Z150.; (Remonte rapide)
-N590 M99;
+N540 T5 D6; ???
+N550 S3000;
+N560 G40 G00 X0. Y-28. ; (C)
+N570 G01 F6 Z14.; (percage)
+N580 G01 Z30.; (Remonte)
+N590 G00 Z150.; (Remonte rapide)
+N600 M99;
 
 
-N620 M30
+N630 M30
 %
